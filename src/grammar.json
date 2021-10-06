@@ -18,7 +18,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_declaration_statement"
+          "name": "declaration_statement"
         }
       ]
     },
@@ -52,92 +52,100 @@
         }
       ]
     },
-    "_declaration_statement": {
-      "type": "CHOICE",
+    "declaration_statement": {
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "const_item"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "attribute_item"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "macro_invocation"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "macro_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "empty_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "attribute_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "inner_attribute_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "mod_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "foreign_mod_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "struct_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "union_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "enum_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_signature_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "impl_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "trait_item"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "associated_type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "let_declaration"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "use_declaration"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "extern_crate_declaration"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "static_item"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "const_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "macro_invocation"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "macro_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "empty_statement"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "inner_attribute_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mod_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "foreign_mod_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "struct_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "union_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "enum_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "type_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "function_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "function_signature_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "impl_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "trait_item"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "associated_type"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "let_declaration"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "use_declaration"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "extern_crate_declaration"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "static_item"
+            }
+          ]
         }
       ]
     },
@@ -1148,7 +1156,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_declaration_statement"
+            "name": "declaration_statement"
           }
         },
         {
@@ -8359,7 +8367,6 @@
     "_tokens",
     "_field_identifier",
     "_non_special_token",
-    "_declaration_statement",
     "_reserved_identifier",
     "_expression_ending_with_block"
   ],
@@ -8368,7 +8375,6 @@
     "_type",
     "_literal",
     "_literal_pattern",
-    "_declaration_statement",
     "_pattern"
   ]
 }

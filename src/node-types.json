@@ -1,95 +1,5 @@
 [
   {
-    "type": "_declaration_statement",
-    "named": true,
-    "subtypes": [
-      {
-        "type": "associated_type",
-        "named": true
-      },
-      {
-        "type": "attribute_item",
-        "named": true
-      },
-      {
-        "type": "const_item",
-        "named": true
-      },
-      {
-        "type": "empty_statement",
-        "named": true
-      },
-      {
-        "type": "enum_item",
-        "named": true
-      },
-      {
-        "type": "extern_crate_declaration",
-        "named": true
-      },
-      {
-        "type": "foreign_mod_item",
-        "named": true
-      },
-      {
-        "type": "function_item",
-        "named": true
-      },
-      {
-        "type": "function_signature_item",
-        "named": true
-      },
-      {
-        "type": "impl_item",
-        "named": true
-      },
-      {
-        "type": "inner_attribute_item",
-        "named": true
-      },
-      {
-        "type": "let_declaration",
-        "named": true
-      },
-      {
-        "type": "macro_definition",
-        "named": true
-      },
-      {
-        "type": "macro_invocation",
-        "named": true
-      },
-      {
-        "type": "mod_item",
-        "named": true
-      },
-      {
-        "type": "static_item",
-        "named": true
-      },
-      {
-        "type": "struct_item",
-        "named": true
-      },
-      {
-        "type": "trait_item",
-        "named": true
-      },
-      {
-        "type": "type_item",
-        "named": true
-      },
-      {
-        "type": "union_item",
-        "named": true
-      },
-      {
-        "type": "use_declaration",
-        "named": true
-      }
-    ]
-  },
-  {
     "type": "_expression",
     "named": true,
     "subtypes": [
@@ -783,11 +693,11 @@
       "required": false,
       "types": [
         {
-          "type": "_declaration_statement",
+          "type": "_expression",
           "named": true
         },
         {
-          "type": "_expression",
+          "type": "declaration_statement",
           "named": true
         }
       ]
@@ -1165,7 +1075,102 @@
       "required": false,
       "types": [
         {
-          "type": "_declaration_statement",
+          "type": "declaration_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "declaration_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "associated_type",
+          "named": true
+        },
+        {
+          "type": "attribute_item",
+          "named": true
+        },
+        {
+          "type": "const_item",
+          "named": true
+        },
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "enum_item",
+          "named": true
+        },
+        {
+          "type": "extern_crate_declaration",
+          "named": true
+        },
+        {
+          "type": "foreign_mod_item",
+          "named": true
+        },
+        {
+          "type": "function_item",
+          "named": true
+        },
+        {
+          "type": "function_signature_item",
+          "named": true
+        },
+        {
+          "type": "impl_item",
+          "named": true
+        },
+        {
+          "type": "inner_attribute_item",
+          "named": true
+        },
+        {
+          "type": "let_declaration",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
+          "type": "macro_invocation",
+          "named": true
+        },
+        {
+          "type": "mod_item",
+          "named": true
+        },
+        {
+          "type": "static_item",
+          "named": true
+        },
+        {
+          "type": "struct_item",
+          "named": true
+        },
+        {
+          "type": "trait_item",
+          "named": true
+        },
+        {
+          "type": "type_item",
+          "named": true
+        },
+        {
+          "type": "union_item",
+          "named": true
+        },
+        {
+          "type": "use_declaration",
           "named": true
         }
       ]
@@ -3253,11 +3258,11 @@
       "required": false,
       "types": [
         {
-          "type": "_declaration_statement",
+          "type": "_expression",
           "named": true
         },
         {
-          "type": "_expression",
+          "type": "declaration_statement",
           "named": true
         }
       ]

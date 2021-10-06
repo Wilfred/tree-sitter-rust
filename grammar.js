@@ -52,7 +52,6 @@ module.exports = grammar({
     $._type,
     $._literal,
     $._literal_pattern,
-    $._declaration_statement,
     $._pattern,
   ],
 
@@ -62,7 +61,6 @@ module.exports = grammar({
     $._tokens,
     $._field_identifier,
     $._non_special_token,
-    $._declaration_statement,
     $._reserved_identifier,
     $._expression_ending_with_block
   ],
@@ -85,7 +83,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $._expression_statement,
-      $._declaration_statement
+      $.declaration_statement
     ),
 
     empty_statement: $ => ';',
@@ -95,29 +93,32 @@ module.exports = grammar({
       prec(1, $._expression_ending_with_block)
     ),
 
-    _declaration_statement: $ => choice(
-      $.const_item,
-      $.macro_invocation,
-      $.macro_definition,
-      $.empty_statement,
-      $.attribute_item,
-      $.inner_attribute_item,
-      $.mod_item,
-      $.foreign_mod_item,
-      $.struct_item,
-      $.union_item,
-      $.enum_item,
-      $.type_item,
-      $.function_item,
-      $.function_signature_item,
-      $.impl_item,
-      $.trait_item,
-      $.associated_type,
-      $.let_declaration,
-      $.use_declaration,
-      $.extern_crate_declaration,
-      $.static_item
-    ),
+    declaration_statement: ($) =>
+      seq(
+        repeat($.attribute_item),
+        choice(
+          $.const_item,
+          $.macro_invocation,
+          $.macro_definition,
+          $.empty_statement,
+          $.inner_attribute_item,
+          $.mod_item,
+          $.foreign_mod_item,
+          $.struct_item,
+          $.union_item,
+          $.enum_item,
+          $.type_item,
+          $.function_item,
+          $.function_signature_item,
+          $.impl_item,
+          $.trait_item,
+          $.associated_type,
+          $.let_declaration,
+          $.use_declaration,
+          $.extern_crate_declaration,
+          $.static_item
+        )
+      ),
 
     // Section - Macro definitions
 
@@ -258,7 +259,7 @@ module.exports = grammar({
 
     declaration_list: $ => seq(
       '{',
-      repeat($._declaration_statement),
+      repeat($.declaration_statement),
       '}'
     ),
 
